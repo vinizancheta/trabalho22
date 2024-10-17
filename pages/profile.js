@@ -20,10 +20,8 @@ const Profile = ({ user }) => {
       const response = await fetch('/api/admin/users'); // Rota da API criada
       const data = await response.json();
       setUsers(data);
-      conselo.log("Entra no fetch");
     } catch (error) {
       console.error("Error fetching users:", error);
-
     }
   };
 
@@ -32,9 +30,7 @@ const Profile = ({ user }) => {
       const { data, error } = await supabase.auth.signUp({
         email: newUserEmail,
         password: newUserPassword,
-        
       });
-      console.log("Entoru no Add");
       if (error) throw error;
       alert('User added successfully');
       fetchUsers(); // Atualiza a lista de usuários
@@ -50,22 +46,23 @@ const Profile = ({ user }) => {
       alert('User updated successfully');
       setEditingUser(null); // Finaliza a edição
       fetchUsers(); // Atualiza a lista de usuários
-      console.log("Entrou no edit ")
     } catch (error) {
       alert(error.message);
     }
   };
 
-  const removeUser = async (userId) => {
+  const removeUser = async (user) => {
     try {
-      const { error } = await supabase.auth.api.deleteUser(userId);
+      // Chamada para a API de exclusão de usuário
+      const { error } = await users.auth.deleteUser(user);
+      
+      // Verifica se ocorreu algum erro
       if (error) throw error;
+      
       alert('User removed successfully');
       fetchUsers(); // Atualiza a lista de usuários
-      console.log("Entrou no remover")
     } catch (error) {
       alert(error.message);
-      console.log(error)
     }
   };
 

@@ -8,12 +8,7 @@ const Header = () => {
 
     return (
         <header className={styles.header}>
-            <a
-                target={"_blank"}
-                rel={"noreferrer noopener"}
-                href="https://github.com/dom-the-dev/nextjs-supabase-fullstack-boilerplate">
-                NextJS X Supabase <br />Boilerplate
-            </a>
+          
 
             <ul className={styles.headerNav}>
                 <li>

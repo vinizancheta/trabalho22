@@ -20,14 +20,17 @@ const SignUp = ({logout}) => {
 
     async function signIn(e) {
         e.preventDefault()
+        console.log("Entrou1")
         if (!email ||!password) {
             setMessage("Please enter a valid email and password")
+            console.log("Entrou2")
             return
         }
 
         const {error, data} = await supabase.auth.signUp({
             email,
             password
+            
         })
 
         if (error) {
@@ -46,7 +49,7 @@ const SignUp = ({logout}) => {
             {message && message}
 
             <h1>Sign Up</h1>
-
+           
             <form onSubmit={signIn}>
                 <input
                     type="text"
@@ -63,6 +66,7 @@ const SignUp = ({logout}) => {
                 <button type={"submit"}>Send</button>
             </form>
             <div>
+    
                 Do you have an account? <Link href={"/login"}><a>Login</a></Link>
             </div>
         </Layout>
