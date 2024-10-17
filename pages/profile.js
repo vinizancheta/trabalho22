@@ -87,8 +87,7 @@ const Profile = ({ user }) => {
                         onChange={(e) => setEditEmail(e.target.value)}
                         placeholder="Edit user email"
                       />
-                      <button onClick={() => editUser(user.id)}>Save</button>
-                      <button onClick={() => setEditingUser(null)}>Cancel</button>
+               
                     </>
                   ) : (
                     <>
@@ -97,7 +96,7 @@ const Profile = ({ user }) => {
                         setEditingUser(user.id);
                         setEditEmail(user.email);
                       }}>Edit</button>
-                      <button onClick={() => removeUser(user.id)}>Delete</button>
+                     
                     </>
                   )}
                 </li>
