@@ -92,11 +92,7 @@ const Profile = ({ user }) => {
                   ) : (
                     <>
                       {user.email}
-                      <button onClick={() => {
-                        setEditingUser(user.id);
-                        setEditEmail(user.email);
-                      }}>Edit</button>
-                     
+                    
                     </>
                   )}
                 </li>
