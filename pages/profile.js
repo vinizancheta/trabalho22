@@ -92,7 +92,7 @@ const Profile = ({ user }) => {
                   ) : (
                     <>
                       {user.email}
-                    
+                     
                     </>
                   )}
                 </li>
@@ -102,20 +102,6 @@ const Profile = ({ user }) => {
             )}
           </ul>
 
-          <h3>Add New User</h3>
-          <input
-            type="email"
-            value={newUserEmail}
-            onChange={(e) => setNewUserEmail(e.target.value)}
-            placeholder="New user email"
-          />
-          <input
-            type="password"
-            value={newUserPassword}
-            onChange={(e) => setNewUserPassword(e.target.value)}
-            placeholder="New user password"
-          />
-          <button onClick={addUser}>Add User</button>
         </>
       ) : (
         <p>Bem Vindo!</p>
